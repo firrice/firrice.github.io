@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Prefix-Tuning Optimizing Continuous Prompts for Generation</title>
+    <link href="/2024/06/24/Prefix-Tuning/"/>
+    <url>/2024/06/24/Prefix-Tuning/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Fine-tuning has to train and store a full copy of the model parameter, which leads to high compution complexity and large storing resource. To address the problem, Prefix-tuning was proposed to optimize a small continuous task-specific vector(called prefix), while keeping the LLM parameters frozen.</p><h3 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h3><p>Generally, to make the light-weight finetune, researchers make large efforts on “inserting” the task-specific parameters into LM. There are several types of “inserting” which contains:(1)adapter-tuning:insert layers between LLM’layers;(2)Prompt engineer: design the task-specific prompt. So, it seems like that, PEFT strategy is to learning “Bias”(in downstream tasks). Several general fine-tuning methods are modeled as follows. Such as table-to-text task, $x$ corresponds to a linearized data table and $y$ is a textual description.  </p><ol><li>Autoregressive LM<br><img src="/post_imgs/Prefix-Tuning/1.png"><br>As shown in the figure above, let $z &#x3D; [x;y]$ be the concatenation of $x$ and $y$; let ${X_{idx}}$ denote the sequence of indices that corresponds to $x$, and ${Y_{idx}}$ denote the same for $y$. The activation at time step $i$ is ${h_i} \in {R^d}$, where ${h_i} &#x3D; \left[ {h_i^{(1)};{\rm{ }}\cdot{\rm{ }}\cdot{\rm{ }}\cdot{\rm{ }};h_i^{(n)}} \right]$ is a concatenation of all activation layers at this time step, and $h_i^{(j)}$ is the activation of the $j$-th Transformer layer at time step $i$.</li></ol><p><img src="/post_imgs/Prefix-Tuning/2.png"></p><ol start="2"><li>Encoder-Decoder</li></ol><p><img src="/post_imgs/Prefix-Tuning/3.png"></p><ol start="3"><li>Fine-tuning</li></ol><h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><p>The pipeline of the Prefix-tuning can be seen as follows:<br><img src="/post_imgs/Prefix-Tuning/4.png"><br><img src="/post_imgs/Prefix-Tuning/5.png"></p><p><strong>Note</strong>:<br>(1) prefix-tuning don’t optimize the ${P_\theta }$ due to performance dropping, it makes through <strong>MLP</strong>.<br><img src="/post_imgs/Prefix-Tuning/6.png"><br><img src="/post_imgs/Prefix-Tuning/7.png"></p><p>(2) It inserts prefix to every layer of Decoder, rather than only in embedding layer.<br>(3) Random initialization leads to a low performance with high variance! So, Initialize the prefix with activations of real words significantly improves generation.   </p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><h4 id="Table-to-Text-task"><a href="#Table-to-Text-task" class="headerlink" title="Table-to-Text task"></a>Table-to-Text task</h4><p><img src="/post_imgs/Prefix-Tuning/8.png"> </p><h4 id="Summarization-task"><a href="#Summarization-task" class="headerlink" title="Summarization task"></a>Summarization task</h4><p><img src="/post_imgs/Prefix-Tuning/9.png"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>LLM-finetune</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2024/06/23/hello-world/"/>
     <url>/2024/06/23/hello-world/</url>
