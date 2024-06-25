@@ -4,7 +4,26 @@
   
   
   <entry>
-    <title>Prefix-Tuning Optimizing Continuous Prompts for Generation</title>
+    <title>2021-arxiv P-tuning v1 GPT Understands, Too</title>
+    <link href="/2024/06/25/P-tuning-v1/"/>
+    <url>/2024/06/25/P-tuning-v1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Manual discrete prompts have several drawbacks, which contain unstable performance(eg: changing a single word causes substantial drow) . To adress the problem, we propose a novel method which employs trainable continuous prompt embeddings in concatenation with discrete prompts.  </p><p>Unstable performance of discrete prompts can be seen as follow:  </p><ol><li>change a single word make large influence to prediction.<br><img src="/post_imgs/P-tuning-v1/1.png" alt=""></li></ol><p><strong>note</strong>: when the LLM is tuned, the instability can be alleviated, but performance difference is still sizeable, especially in few-shot. And recent algorithms do not well with it.  </p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ol><li><p>Firstly, the work flow of discrete prompts is as follow:  </p></li><li><p>Step1: Let M be a pretrained language model with a hidden size of h and a vocabulary size of |V|. Let {(xi, yi))}i be a labeled dataset for an NLU task, where x0:n = {x0, x1, …, xn} is an input consisting of a sequence of discrete tokens, and y ∈ Y is a label. Our goal is to estimate the conditional probability for classification fM(x) = pˆ(y|x) with parameters of M either finetuned or frozen.</p></li><li>Step2: Let [Di] be a discrete prompt token. Each prompt can be described as a template T = {[D0:i], x, [D(i+1):j], y, [D(j+1):k]}</li><li>Step3: Through the work above, the labeled data can be organized into a sequence of text tokens including x and y, and the task can be reformulated as filling in the blanks of the input text.   </li></ol><p>Eg: For the task of predicting a country’s capital (LAMA-TREx P36), a prompt could be “The capital of [INPUT] is [LABEL].” With a piece of labeled data “(Britain, London)”, the reformulated text would be “The capital of Britain is [MASK].”, where “[MASK]” should predict the given label “London”.   </p><ol><li>The pipeline proposed in the paper and comparison with discrete prompts is as follow:  </li></ol><p><img src="/post_imgs/P-tuning-v1/2.png" alt=""></p><p>Let [Pi] be the ith continuous prompt embedding. The prompt template for P-tuning is as follows:  </p><p>T = {[P0:i], x, [P(i+1):j], y, [P(j+1):k]}   </p><p>P-Tuning leverages an extra embedding function f : [Pi] → hi to map the template to:   </p><p>{h0, …, hi, e(x), hi+1, …, hj, e(y), hj+1, …, hk}   </p><p>Finally, we update the embeddings $P_i^k$ to optimize a task loss function. </p><p>Note: For the choose of [Pi], they can be extracted from <strong>unused tokens</strong> belong to pretraining vocabulary, eg: unused 1 ~ unused99 in BERT vob.   </p><ol><li>Prompt Encoder Network</li></ol><p>There are three types of encoder for continuous embedding, they are LSTM, MLP and EMB. EMB means identity map and the ablation is as follow:   </p><p><img src="/post_imgs/P-tuning-v1/3.png" alt=""></p><p>Based on the comparison above, <strong>LSTM</strong> and <strong>MLP</strong> generally works well on these tasks, and EMB can be substantially under-perform the other two on some tasks.   </p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/P-tuning-v1/4.png" alt=""></p><p>More evaluation results can be found in the paper.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>LLM-finetune</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation</title>
     <link href="/2024/06/24/Prefix-Tuning/"/>
     <url>/2024/06/24/Prefix-Tuning/</url>
     
