@@ -16,27 +16,26 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MotivationManual discrete prompts have several drawbacks, which contain unstable performance(eg: changing a single word causes substantial drow) . To adress the problem, we propose a novel method whic">
+    <meta name="description" content="MotivationIn the context of NLU tasks, the prior work reveals that prompt-tuning doesn’t perform well for normal-sized pretrained model and hard sequence labeling tasks(that means difficult tasks, lik">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021-arxiv P-tuning v1 GPT Understands, Too">
-<meta property="og:url" content="https://firrice.github.io/2024/06/25/P-tuning-v1/index.html">
+<meta property="og:title" content="2022-ACL&#x2F;short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks">
+<meta property="og:url" content="https://firrice.github.io/2024/06/26/P-tuning-v2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="MotivationManual discrete prompts have several drawbacks, which contain unstable performance(eg: changing a single word causes substantial drow) . To adress the problem, we propose a novel method whic">
+<meta property="og:description" content="MotivationIn the context of NLU tasks, the prior work reveals that prompt-tuning doesn’t perform well for normal-sized pretrained model and hard sequence labeling tasks(that means difficult tasks, lik">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v1/1.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v1/2.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v1/3.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v1/4.png">
-<meta property="article:published_time" content="2024-06-25T06:40:04.000Z">
-<meta property="article:modified_time" content="2024-06-25T09:40:08.893Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v2/1.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v2/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/P-tuning-v2/3.png">
+<meta property="article:published_time" content="2024-06-26T01:26:24.000Z">
+<meta property="article:modified_time" content="2024-06-26T01:34:38.762Z">
 <meta property="article:author" content="firrice">
 <meta property="article:tag" content="LLM-finetune">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://firrice.github.io/post_imgs/P-tuning-v1/1.png">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/P-tuning-v2/1.png">
   
   
   
-  <title>2021-arxiv P-tuning v1 GPT Understands, Too - Hexo</title>
+  <title>2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -231,7 +230,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2021-arxiv P-tuning v1 GPT Understands, Too"></span>
+            <span id="subtitle" data-typed-text="2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks"></span>
           
         </div>
 
@@ -242,8 +241,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-25 14:40" pubdate>
-          June 25, 2024 pm
+        <time datetime="2024-06-26 09:26" pubdate>
+          June 26, 2024 am
         </time>
       </span>
     
@@ -254,7 +253,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          135 words
+          46 words
         
       </span>
     
@@ -265,7 +264,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -310,44 +309,26 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2021-arxiv P-tuning v1 GPT Understands, Too</h1>
+            <h1 id="seo-header">2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Manual discrete prompts have several drawbacks, which contain unstable performance(eg: changing a single word causes substantial drow) . To adress the problem, we propose a novel method which employs trainable continuous prompt embeddings in concatenation with discrete prompts.  </p>
-<p>Unstable performance of discrete prompts can be seen as follow:  </p>
+                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>In the context of NLU tasks, the prior work reveals that prompt-tuning <strong>doesn’t perform well for normal-sized pretrained model and hard sequence labeling tasks</strong>(that means difficult tasks, like: NER, etc). To address the problems, we perform a optimization version of prompt-tuning to strengthen the <strong>scalability</strong> and adaption for <strong>multi-tasks</strong>.   </p>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>Technically, P-tuning v2 is not conceptually novel, it can be viewed as an optimized and adapted implementation of prefix-tuning. The pipeline was depicted as blow:   </p>
+<p><img src="/post_imgs/P-tuning-v2/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>Note, there are several differences between P-tuning v2 and Prefix-tuning, which was summarized as follows:    </p>
 <ol>
-<li>change a single word make large influence to prediction.<br><img src="/post_imgs/P-tuning-v1/1.png" srcset="/img/loading.gif" lazyload alt=""></li>
-</ol>
-<p><strong>note</strong>: when the LLM is tuned, the instability can be alleviated, but performance difference is still sizeable, especially in few-shot. And recent algorithms do not well with it.  </p>
-<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ol>
-<li><p>Firstly, the work flow of discrete prompts is as follow:  </p>
+<li><p><strong>Applied tasks</strong>: Prefix-tuning focuses on NLG tasks using only-decoder or encode-decoder, while P-tuning v2 extend to NLU and NLG tasks.  </p>
 </li>
-<li><p>Step1: Let M be a pretrained language model with a hidden size of h and a vocabulary size of |V|. Let {(xi, yi))}i be a labeled dataset for an NLU task, where x0:n = {x0, x1, …, xn} is an input consisting of a sequence of discrete tokens, and y ∈ Y is a label. Our goal is to estimate the conditional probability for classification fM(x) = pˆ(y|x) with parameters of M either finetuned or frozen.</p>
+<li><p><strong>Reparameterization</strong>: we discover that its usefulness depends on tasks and datasets in the paper. And it seems like that the reparameterization(MLP head in Prefix-tuning) was removed in pratice.   </p>
 </li>
-<li>Step2: Let [Di] be a discrete prompt token. Each prompt can be described as a template T = {[D0:i], x, [D(i+1):j], y, [D(j+1):k]}</li>
-<li>Step3: Through the work above, the labeled data can be organized into a sequence of text tokens including x and y, and the task can be reformulated as filling in the blanks of the input text.   </li>
+<li><p><strong>Classification Head</strong>: Generally, using a language modeling head to predict verbalizers. While P-tuning v2 used random initialized classification head on top of the tokens.   </p>
+</li>
 </ol>
-<p>Eg: For the task of predicting a country’s capital (LAMA-TREx P36), a prompt could be “The capital of [INPUT] is [LABEL].” With a piece of labeled data “(Britain, London)”, the reformulated text would be “The capital of Britain is [MASK].”, where “[MASK]” should predict the given label “London”.   </p>
-<ol>
-<li>The pipeline proposed in the paper and comparison with discrete prompts is as follow:  </li>
-</ol>
-<p><img src="/post_imgs/P-tuning-v1/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>Let [Pi] be the ith continuous prompt embedding. The prompt template for P-tuning is as follows:  </p>
-<p>T = {[P0:i], x, [P(i+1):j], y, [P(j+1):k]}   </p>
-<p>P-Tuning leverages an extra embedding function f : [Pi] → hi to map the template to:   </p>
-<p>{h0, …, hi, e(x), hi+1, …, hj, e(y), hj+1, …, hk}   </p>
-<p>Finally, we update the embeddings $P_i^k$ to optimize a task loss function. </p>
-<p>Note: For the choose of [Pi], they can be extracted from <strong>unused tokens</strong> belong to pretraining vocabulary, eg: unused 1 ~ unused99 in BERT vob.   </p>
-<ol>
-<li>Prompt Encoder Network</li>
-</ol>
-<p>There are three types of encoder for continuous embedding, they are LSTM, MLP and EMB. EMB means identity map and the ablation is as follow:   </p>
-<p><img src="/post_imgs/P-tuning-v1/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>Based on the comparison above, <strong>LSTM</strong> and <strong>MLP</strong> generally works well on these tasks, and EMB can be substantially under-perform the other two on some tasks.   </p>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/P-tuning-v1/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>More evaluation results can be found in the paper.</p>
+<p>Below demonstrates the comparison between P-tuning v2 with existing Prompt-tuning approches.   </p>
+<p><img src="/post_imgs/P-tuning-v2/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/P-tuning-v2/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
 
                 
               </div>
@@ -372,8 +353,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2021-arxiv P-tuning v1 GPT Understands, Too</div>
-      <div>https://firrice.github.io/2024/06/25/P-tuning-v1/</div>
+      <div>2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</div>
+      <div>https://firrice.github.io/2024/06/26/P-tuning-v2/</div>
     </div>
     <div class="license-meta">
       
@@ -385,7 +366,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 25, 2024</div>
+          <div>June 26, 2024</div>
         </div>
       
       
@@ -417,9 +398,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/26/P-tuning-v2/" title="2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks">
+                      <a href="/2024/06/26/LoRA/" title="2021-ICLR LORA LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022-ACL/short P-Tuning v2 Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks</span>
+                        <span class="hidden-mobile">2021-ICLR LORA LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -427,8 +408,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/24/Prefix-Tuning/" title="2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation">
-                        <span class="hidden-mobile">2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation</span>
+                      <a href="/2024/06/25/P-tuning-v1/" title="2021-arxiv P-tuning v1 GPT Understands, Too">
+                        <span class="hidden-mobile">2021-arxiv P-tuning v1 GPT Understands, Too</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
