@@ -49,9 +49,9 @@
       
       <tag>MTSC</tag>
       
-      <tag>self-attention</tag>
-      
       <tag>position-info</tag>
+      
+      <tag>self-attention</tag>
       
     </tags>
     
@@ -76,9 +76,9 @@
     
     <tags>
       
-      <tag>survey</tag>
-      
       <tag>TSC</tag>
+      
+      <tag>survey</tag>
       
     </tags>
     
@@ -238,9 +238,9 @@
     
     <tags>
       
-      <tag>survey</tag>
-      
       <tag>TSC</tag>
+      
+      <tag>survey</tag>
       
     </tags>
     
@@ -290,9 +290,9 @@
     
     <tags>
       
-      <tag>RAG</tag>
-      
       <tag>survey</tag>
+      
+      <tag>RAG</tag>
       
     </tags>
     

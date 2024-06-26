@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/10/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/9/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/8/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/7/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/6/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/5/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/4/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/3/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/2/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/1/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/QLoRA/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/P-tuning-v2/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/LoRA/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/25/P-tuning-v1/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/24/Prefix-Tuning/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/26/RAG-survey/</loc>
+    
+    <lastmod>2024-06-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/2024/06/23/hello-world/</loc>
+    
+    <lastmod>2024-06-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://firrice.github.io/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://firrice.github.io/tags/LLM-finetune/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/Time-Series-Generating/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/MTSC/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/position-info/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/TSC/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/survey/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/unsupervised-learning/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/attention/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/transformer/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/cnn-kernel/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/self-attention/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/tags/RAG/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://firrice.github.io/categories/Large-Language-Model/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://firrice.github.io/categories/Time-Series-Classification/</loc>
+    <lastmod>2024-06-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+</urlset>
