@@ -4,6 +4,276 @@
   
   
   <entry>
+    <title>2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification</title>
+    <link href="/2024/06/26/10/"/>
+    <url>/2024/06/26/10/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>The detailed study for position encoding within transformer to address MTSC problem is absent. So the paper tends to fill it in terms of Absolute Position Embedding(APE) and Relative Position Embedding(RPE). Next, authors analyse the shortcomings of them which were summarized as follows:  </p><ol><li><strong>APE</strong></li></ol><ul><li><p><strong>distance awareness property</strong>: It points to that the dot product doesn’t always decrease as the distance between two positions increases, which disappears when lower embedding dimensions, such as 64.</p></li><li><p><strong>anisotropic phenomenon</strong>: a significant part within the embedding vectors are similar between different positions, which will do harm to classification.</p></li></ul><p><img src="/post_imgs/20240626-10/1.png" alt=""></p><p><strong>note</strong>: distance awareness property and anisotropic phenomenon can be seen above.  </p><ol><li><strong>RPE</strong></li></ol><ul><li>lack of memory effiency: it requires $O({L^2}d)$ memory due to the additional relative position embedding.  </li></ul><p><img src="/post_imgs/20240626-10/2.png" alt=""></p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>The paper mainly tend to solve the problems above, and <strong>tAPE</strong>(Time Absolute Position Embedding) and <strong>eRPE</strong>(Efficient Relative Position Embedding) are proposed.  </p><ul><li>tAPE: It takes into account the input embedding dimension and length as follows:  </li></ul><p><img src="/post_imgs/20240626-10/3.png" alt=""></p><p>results:  </p><p><img src="/post_imgs/20240626-10/4.png" alt=""></p><p>According to the fig(a) above, the distance awareness property has been alleviated, and similarity has decreased in the fig(b) which means the aniostropic problem has been addressed to a certain degree.  </p><ul><li>eRPE</li></ul><p><img src="/post_imgs/20240626-10/5.png" alt=""></p><p><img src="/post_imgs/20240626-10/6.png" alt=""></p><p>results:  </p><p><img src="/post_imgs/20240626-10/7.png" alt=""></p><ul><li>The pipeline of <strong>ConvTran</strong> proposed:  </li></ul><p><img src="/post_imgs/20240626-10/8.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-10/9.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTSC</tag>
+      
+      <tag>position-info</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2023-arxiv Enhancing Multivariate Time Series Classifiers through Self-Attention and Relative Positioning Infusion</title>
+    <link href="/2024/06/26/9/"/>
+    <url>/2024/06/26/9/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Two novel attention mechanisms were proposed, which contain a relative positive encoding and attention block.   </p><p>The main contributions:<br>(1)<strong>TPS</strong>: explicitly model the relative position distance into Gaussian distance!<br>(2)<strong>GTA</strong>: just like CA(coordinate attention) block in CV domain!   </p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul><li>Temporal Pseudo-Gaussian augmented Self-attention  </li></ul><p><img src="/post_imgs/20240626-9/1.png" alt=""></p><p><img src="/post_imgs/20240626-9/2.png" alt=""></p><p><img src="/post_imgs/20240626-9/3.png" alt=""></p><ul><li>Global Temporal Attention block  </li></ul><p><img src="/post_imgs/20240626-9/4.png" alt=""></p><p>For reference, the structure of CA(coordinate attention) block was as follow:  </p><p><img src="/post_imgs/20240626-9/5.png" alt=""> </p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-9/6.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTSC</tag>
+      
+      <tag>self-attention</tag>
+      
+      <tag>position-info</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms</title>
+    <link href="/2024/06/26/8/"/>
+    <url>/2024/06/26/8/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><ul><li>We extend the taxonomy to include three categories to reflect the recent development, which contain convolution、feature and deep learning.</li><li>We introduce 30 new datasets based on UCR112.</li><li>We make a summary of recent time series classification algorithms.</li></ul><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ol><li>The summary about recent TSC methods, which can be categorized to eight types based on <strong>representation of data</strong>:  </li></ol><ul><li>Distance: classification is based on some time series specific distance<br>measure between series</li><li>Feature: global features are extracted and passed to a standard classifier in a simple pipeline</li><li>Interval: features are derived from selected phase dependent intervals<br>in an ensemble of pipelines, and further output the summary statics.</li><li>Shapelet: phase independent discriminatory subseries form the basis<br>for classification(classify throught the existence of shapelet)</li><li>Dictionary: histograms of counts of repeating patterns are the features for a classifier</li><li>Convolution: convolutions and pooling operations create the feature<br>space for classification</li><li>Deep Learning: neural network</li><li>Hybrid: approaches combine two or more of the above approaches</li></ul><ol><li>The summary about recent TSC methods, which can be categorized to three types based on <strong>design patterns</strong>:  </li></ol><ul><li>single pipeline:transformations+standard ML classifier;</li><li>ensembles of pipelines;</li><li>transformations embedded in classifier structure, such decision tree,where the data is transformed at each node.</li></ul><p><strong>note</strong>: there are generally two kinds of transformations:<br>(1)series-to-vector,such as calculating summary features;<br>(2)series-to-series,such as transforming to the frequency domain of the series;   </p><ol><li>The eight types contain methods:  </li></ol><ul><li>Distance: 1-NN DTW, Elastic Ensemble(EE), Proximityforest(PF), ShapeDTW</li><li>Feature: The canonical time series characteristics(Catch22), Time Series Feature extraction based on Scalable Hypothesis Tests(TSFresh), Generalized signatures, FreshPRINCE</li><li>Interval: Time Series Forest(TSF), Random interval spectral ensemble(RISE), Supervised Time Series Forest(STSF), Random STSF(RSTSF), The Canonical Interval Forest(CIF), The diverse representation canonical interval forest(DrCIF)</li><li>Shapelet: The Shapelet Transform Classifer(STC), The Generalised Random Shapelet Forest(RSF), The Multible representation sequence learner(MrSEQL), MrSQM, Random Dilated shaplet transform(RDST)</li><li>Dictionary: Bag-of-SFA-Symbols(BOSS), Word Extraction for Time Series Classification(WEASEL), WEASEL with dilation(WEASEL-D), Contractble BOSS(cBOSS), Spatial BOSS, The Temporal Dictionary Ensemble(TDE)</li><li>Convolution: ROCKET, MiniRocket, MultiRocket, Hydra;</li><li>Deep learning: InceptionT, Resnet</li><li>Hybrid: HCa, HC1, HC2, TS-CHIEF</li></ul><p>The detailed information can be seen as follow:  </p><p><img src="/post_imgs/20240626-8/1.png" alt=""></p><h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul><li>30 new univariate datasets introduced:  </li></ul><p><img src="/post_imgs/20240626-8/2.png" alt=""></p><ul><li>Evaluation on UCR112:  </li></ul><p><img src="/post_imgs/20240626-8/3.png" alt=""></p><ul><li>Evaluation on UCR142:  </li></ul><p><img src="/post_imgs/20240626-8/4.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>survey</tag>
+      
+      <tag>TSC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022-ICLR OMNI-SCALE CNNS A SIMPLE AND EFFECTIVE KERNEL SIZE CONFIGURATION FOR TIME SERIES CLASSIFICATION</title>
+    <link href="/2024/06/26/7/"/>
+    <url>/2024/06/26/7/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p><img src="/post_imgs/20240626-7/1.png" alt=""></p><p>According to the left of fig(1), tuning RF size make substantial influence over acc, and there is no single best RF size across all datasets demonstarted in the right of fig(1). So researchers seeked to design a method to find each best RF size for every datasets. And next, they have found two phenomena as can been below, which help propose the 1D-OS block in the paper.  </p><p><img src="/post_imgs/20240626-7/2.png" alt=""></p><ul><li>Phenomenon 1st: according to the left of Fig2，<strong>1D-CNNs are not sensitive to the specific kernel size configurations</strong>.</li><li>Phenomenon 2nd: according to the right of Fig2，<strong>the performance of 1D-CNNs is mainly determined by the best RF size it has</strong>.</li><li>note: we can also find that the model’s performance is positive correlation with the model’s RF size.</li></ul><p>According to the finds above, what we need to do is to design a method which can cover all RF sizes, then it will has similar performance with the best RF size, and there is no additional consider for specific kernel configuration. So, the OS block was proposed based on <strong>Goldbach’s conjecture</strong>, where any positive even number can be written as the sum of two prime numbers under this background.   </p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p><img src="/post_imgs/20240626-7/3.png" alt=""></p><p><img src="/post_imgs/20240626-7/4.png" alt=""></p><p><img src="/post_imgs/20240626-7/5.png" alt=""></p><p>As we can seen in the figure above, the set <strong>S</strong> cover all interger RF sizes, and <strong>this design manner has advantages in terms of model size and scalability for long time series due to the property of prime number</strong> which can be seen below:   </p><p><img src="/post_imgs/20240626-7/6.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-7/7.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>TSC</tag>
+      
+      <tag>cnn-kernel</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2021-arxiv Gated Transformer Networks for Multivariate Time Series Classification</title>
+    <link href="/2024/06/26/6/"/>
+    <url>/2024/06/26/6/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>In this work, researchers explored a simple extension of the current Transformer Networks with gating, named Gated Transformer Networks (GTN) for the multivariate time series classification problem.</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>Actually, a two-towers transformers acquiring position &amp; channel attention utilizing transposing time and position axis was proposed, and the pipeline was as follow:   </p><p><img src="/post_imgs/20240626-6/1.png" alt=""></p><p><img src="/post_imgs/20240626-6/2.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-6/3.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTSC</tag>
+      
+      <tag>transformer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2021-KDD A TRANSFORMER-BASED FRAMEWORK FOR MULTIVARIATE TIME SERIES REPRESENTATION LEARNING</title>
+    <link href="/2024/06/26/5/"/>
+    <url>/2024/06/26/5/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>In this paper, a transformer-based framework for unsupervised learning of multivariate time series was proposed for the first time.</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>The overall pipeline is as follow:   </p><p><img src="/post_imgs/20240626-5/1.png" alt=""></p><p>As we can see in the figure above, the pipeline consists of two phases:   </p><p>（1）<strong>Pre-train</strong>   </p><ul><li>masked input</li><li>Pre-train a encoder-only transformer-based model to make the autoregressive objective on the traininig set.</li><li>MSE loss was calculated pointed at masked position</li></ul><p>（2）<strong>Fine-tune</strong>  </p><ul><li>Add a Linear layer to project the representation learned into the output space for regression/classification tasks.  </li></ul><p><strong>Comparison with original encoder-only model</strong>:   </p><ul><li>normalization for each dimension across all training samples</li><li>input was firstly linearly projected to a d-dimensional vector space, which is a bit like embedding layer in LLM</li><li>using position embedding instead of position encoding</li><li>padding mask: shorter samples are padded with arbitrary values, and we generate a padding mask which adds a large negative value to the attention scores</li><li>using batch normalization rather than layer normalization</li><li>Full-parameter finetune is better than freezon finetune</li></ul><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-5/2.png" alt=""> </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTSC</tag>
+      
+      <tag>transformer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2020-IJCAI A New Attention Mechanism to Classify Multivariate Time Series</title>
+    <link href="/2024/06/26/4/"/>
+    <url>/2024/06/26/4/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>First, the long-range dependencies of the time-series sequences are not well captured. Second, the interactions of multiple variables are generally not represented in features. To address these aforementioned issues, the paper propose a novel Cross Attention Stabilized Fully Convolutional Neural Network (CA-SFCN) to classify MTS data.</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>The main contributions are summarized as follow:   </p><p>A “novel” attention mechanism was proposed which actually is just self-attention beyond to transformers, while applied to X and Y axis over feature maps. Consequently, attention across time axis and channel axis was modeled, so the method in this paper was called cross-attention.   </p><p>The overall pipeline can be seen below:   </p><p><img src="/post_imgs/20240626-4/1.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-4/2.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MTSC</tag>
+      
+      <tag>attention</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2019-NIPs Unsupervised Scalable Representation Learning for Multivariate Time Series</title>
+    <link href="/2024/06/26/3/"/>
+    <url>/2024/06/26/3/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>There exists <strong>highly variable lengths</strong> and <strong>sparse labeling</strong> in practice, to tackle the issues, a kind of unsupervised scalable representation was proposed this paper.</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ul><li>Backbone module uses unsupervised learning on training set(Encoder-only architecture, which contains causal Conv), the comparison between causal conv and LSTM can be seen as below:   </li></ul><p><img src="/post_imgs/20240626-3/1.png" alt=""></p><ul><li>Projection head(like: SVM) uses supervised learning on training set;</li><li>A novel triplet loss, which samples the negative and positive pair based on the subseries from the respective sample(positive/negative sample), the relative pseudo-code is as follow:   </li></ul><p><img src="/post_imgs/20240626-3/2.png" alt=""></p><p><img src="/post_imgs/20240626-3/3.png" alt=""></p><p>The formula of triplet loss introduced is as follow:  </p><p><img src="/post_imgs/20240626-3/4.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-3/5.png" alt=""></p><p><img src="/post_imgs/20240626-3/6.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>TSC</tag>
+      
+      <tag>unsupervised learning</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2018-arxiv The UEA multivariate time series classification archive(2018)</title>
+    <link href="/2024/06/26/2/"/>
+    <url>/2024/06/26/2/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>It’s the first iteration of MTSC datasets, which contains 30 datasets with equal series length per problem. The MTSC datasets of UEA archive consist of three types of sources, they are HAR(Human activity Recognition), Motion Classification, and ECG Classification. The detailed information can be seen as follows:   </p><p><img src="/post_imgs/20240626-2/1.png" alt=""></p><p>Further, authors make evaluation based on 1-NN, DTW. The results are as below:  </p><p><img src="/post_imgs/20240626-2/2.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>survey</tag>
+      
+      <tag>TSC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2017-ICDM Generating synthetic time series to augment sparse datasets</title>
+    <link href="/2024/06/26/1/"/>
+    <url>/2024/06/26/1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>A new synthetic series genaration method was proposed, and the average time series based on the extention of DBA(Dynamic Barycenter Averaging) was as a synthetic sample.  </p><h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><p>The paper firstly anlysed two shortcomings using the original DBA to generate synthetic samples, which contained as below:   </p><ul><li>Modifying the starting time series(that is the initial random average series in DBA) is not sufficient to create enough <strong>diversity</strong> in the synthesized dataset;</li><li>The raw DBA method which utilizes the “uniformly weighted” schedule may generate <strong>undesirable</strong> samples when the distribution is not spherical. Such as for “U-shape” distribution, computing the center of this U will typically construct very unlikely objects.</li></ul><p>The main contributes of this paper were to adress two problems above through designing a <strong>weighted</strong> schedule(for the second problem) based on <strong>batch</strong> series rather than all samples in DBA to induce the diversity(for the first problem). The weighted mechanism was introdued as follow:   </p><p><img src="/post_imgs/20240626-1/1.png" alt=""></p><p>Fuether, three extentions of DBA concentrating on “Batch” were proposed, and which were introduced as follow detailedly:   </p><ol><li>Average All (AA)</li></ol><p><img src="/post_imgs/20240626-1/2.png" alt=""></p><ol><li>Average Selected (AS)</li></ol><p><img src="/post_imgs/20240626-1/3.png" alt=""></p><ol><li>Average Selected with Distance (ASD)</li></ol><p>It adds the density property to distribution based on distance to Nearst Neighbor.   </p><p><img src="/post_imgs/20240626-1/4.png" alt=""> </p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>1、<strong>ASD is better than AA</strong>  </p><p><img src="/post_imgs/20240626-1/5.png" alt=""> </p><p>2、<strong>Increasing the number of available examples per class can strongthen model</strong>.   </p><p><img src="/post_imgs/20240626-1/6.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Time Series Classification</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Time Series Generating</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</title>
     <link href="/2024/06/26/RAG-survey/"/>
     <url>/2024/06/26/RAG-survey/</url>

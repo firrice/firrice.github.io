@@ -16,28 +16,29 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="IntroductionThe paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:      More specifically, three p">
+    <meta name="description" content="MotivationA new synthetic series genaration method was proposed, and the average time series based on the extention of DBA(Dynamic Barycenter Averaging) was as a synthetic sample.   MethodsThe paper f">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey">
-<meta property="og:url" content="https://firrice.github.io/2024/06/26/RAG-survey/index.html">
+<meta property="og:title" content="2017-ICDM Generating synthetic time series to augment sparse datasets">
+<meta property="og:url" content="https://firrice.github.io/2024/06/26/1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="IntroductionThe paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:      More specifically, three p">
+<meta property="og:description" content="MotivationA new synthetic series genaration method was proposed, and the average time series based on the extention of DBA(Dynamic Barycenter Averaging) was as a synthetic sample.   MethodsThe paper f">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/1.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/2.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/3.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/4.png">
-<meta property="article:published_time" content="2024-06-26T02:19:11.000Z">
-<meta property="article:modified_time" content="2024-06-26T03:05:45.422Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/1.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/4.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/5.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-1/6.png">
+<meta property="article:published_time" content="2024-06-26T03:18:42.000Z">
+<meta property="article:modified_time" content="2024-06-26T06:45:08.480Z">
 <meta property="article:author" content="firrice">
-<meta property="article:tag" content="RAG">
-<meta property="article:tag" content="survey">
+<meta property="article:tag" content="Time Series Generating">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://firrice.github.io/post_imgs/RAG-survey/1.png">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/20240626-1/1.png">
   
   
   
-  <title>2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey - Hexo</title>
+  <title>2017-ICDM Generating synthetic time series to augment sparse datasets - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey"></span>
+            <span id="subtitle" data-typed-text="2017-ICDM Generating synthetic time series to augment sparse datasets"></span>
           
         </div>
 
@@ -243,7 +244,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-26 10:19" pubdate>
+        <time datetime="2024-06-26 11:18" pubdate>
           June 26, 2024 am
         </time>
       </span>
@@ -255,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 words
+          37 words
         
       </span>
     
@@ -311,18 +312,37 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</h1>
+            <h1 id="seo-header">2017-ICDM Generating synthetic time series to augment sparse datasets</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:    </p>
-<p><img src="/post_imgs/RAG-survey/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>More specifically, three paradigms of RAG are demonstrated as followings:   </p>
-<p><img src="/post_imgs/RAG-survey/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/RAG-survey/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>The ecosystem of RAG can be seen in the img below:   </p>
-<p><img src="/post_imgs/RAG-survey/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
+                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>A new synthetic series genaration method was proposed, and the average time series based on the extention of DBA(Dynamic Barycenter Averaging) was as a synthetic sample.  </p>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><p>The paper firstly anlysed two shortcomings using the original DBA to generate synthetic samples, which contained as below:   </p>
+<ul>
+<li>Modifying the starting time series(that is the initial random average series in DBA) is not sufficient to create enough <strong>diversity</strong> in the synthesized dataset;</li>
+<li>The raw DBA method which utilizes the “uniformly weighted” schedule may generate <strong>undesirable</strong> samples when the distribution is not spherical. Such as for “U-shape” distribution, computing the center of this U will typically construct very unlikely objects.</li>
+</ul>
+<p>The main contributes of this paper were to adress two problems above through designing a <strong>weighted</strong> schedule(for the second problem) based on <strong>batch</strong> series rather than all samples in DBA to induce the diversity(for the first problem). The weighted mechanism was introdued as follow:   </p>
+<p><img src="/post_imgs/20240626-1/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>Fuether, three extentions of DBA concentrating on “Batch” were proposed, and which were introduced as follow detailedly:   </p>
+<ol>
+<li>Average All (AA)</li>
+</ol>
+<p><img src="/post_imgs/20240626-1/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol>
+<li>Average Selected (AS)</li>
+</ol>
+<p><img src="/post_imgs/20240626-1/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol>
+<li>Average Selected with Distance (ASD)</li>
+</ol>
+<p>It adds the density property to distribution based on distance to Nearst Neighbor.   </p>
+<p><img src="/post_imgs/20240626-1/4.png" srcset="/img/loading.gif" lazyload alt=""> </p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>1、<strong>ASD is better than AA</strong>  </p>
+<p><img src="/post_imgs/20240626-1/5.png" srcset="/img/loading.gif" lazyload alt=""> </p>
+<p>2、<strong>Increasing the number of available examples per class can strongthen model</strong>.   </p>
+<p><img src="/post_imgs/20240626-1/6.png" srcset="/img/loading.gif" lazyload alt=""></p>
 
                 
               </div>
@@ -341,7 +361,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Large-Language-Model/" class="category-chain-item">Large Language Model</a>
+  <a href="/categories/Time-Series-Classification/" class="category-chain-item">Time Series Classification</a>
   
   
 
@@ -356,9 +376,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
-      
-        <a href="/tags/survey/" class="print-no-link">#survey</a>
+        <a href="/tags/Time-Series-Generating/" class="print-no-link">#Time Series Generating</a>
       
     </div>
   
@@ -370,8 +388,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</div>
-      <div>https://firrice.github.io/2024/06/26/RAG-survey/</div>
+      <div>2017-ICDM Generating synthetic time series to augment sparse datasets</div>
+      <div>https://firrice.github.io/2024/06/26/1/</div>
     </div>
     <div class="license-meta">
       
@@ -415,9 +433,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/26/1/" title="2017-ICDM Generating synthetic time series to augment sparse datasets">
+                      <a href="/2024/06/26/2/" title="2018-arxiv The UEA multivariate time series classification archive(2018)">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2017-ICDM Generating synthetic time series to augment sparse datasets</span>
+                        <span class="hidden-mobile">2018-arxiv The UEA multivariate time series classification archive(2018)</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -425,8 +443,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/26/QLoRA/" title="2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs">
-                        <span class="hidden-mobile">2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs</span>
+                      <a href="/2024/06/26/RAG-survey/" title="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey">
+                        <span class="hidden-mobile">2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -514,12 +532,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -743,49 +755,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 

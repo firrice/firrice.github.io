@@ -16,28 +16,28 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="IntroductionThe paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:      More specifically, three p">
+    <meta name="description" content="Motivation We extend the taxonomy to include three categories to reflect the recent development, which contain convolution、feature and deep learning. We introduce 30 new datasets based on UCR112. We m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey">
-<meta property="og:url" content="https://firrice.github.io/2024/06/26/RAG-survey/index.html">
+<meta property="og:title" content="2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms">
+<meta property="og:url" content="https://firrice.github.io/2024/06/26/8/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="IntroductionThe paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:      More specifically, three p">
+<meta property="og:description" content="Motivation We extend the taxonomy to include three categories to reflect the recent development, which contain convolution、feature and deep learning. We introduce 30 new datasets based on UCR112. We m">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/1.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/2.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/3.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/RAG-survey/4.png">
-<meta property="article:published_time" content="2024-06-26T02:19:11.000Z">
-<meta property="article:modified_time" content="2024-06-26T03:05:45.422Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-8/1.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-8/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-8/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-8/4.png">
+<meta property="article:published_time" content="2024-06-26T07:22:29.000Z">
+<meta property="article:modified_time" content="2024-06-26T08:17:38.463Z">
 <meta property="article:author" content="firrice">
-<meta property="article:tag" content="RAG">
 <meta property="article:tag" content="survey">
+<meta property="article:tag" content="TSC">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://firrice.github.io/post_imgs/RAG-survey/1.png">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/20240626-8/1.png">
   
   
   
-  <title>2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey - Hexo</title>
+  <title>2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -232,7 +232,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey"></span>
+            <span id="subtitle" data-typed-text="2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms"></span>
           
         </div>
 
@@ -243,8 +243,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-26 10:19" pubdate>
-          June 26, 2024 am
+        <time datetime="2024-06-26 15:22" pubdate>
+          June 26, 2024 pm
         </time>
       </span>
     
@@ -255,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8 words
+          109 words
         
       </span>
     
@@ -311,18 +311,65 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</h1>
+            <h1 id="seo-header">2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:    </p>
-<p><img src="/post_imgs/RAG-survey/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>More specifically, three paradigms of RAG are demonstrated as followings:   </p>
-<p><img src="/post_imgs/RAG-survey/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/RAG-survey/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>The ecosystem of RAG can be seen in the img below:   </p>
-<p><img src="/post_imgs/RAG-survey/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
+                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><ul>
+<li>We extend the taxonomy to include three categories to reflect the recent development, which contain convolution、feature and deep learning.</li>
+<li>We introduce 30 new datasets based on UCR112.</li>
+<li>We make a summary of recent time series classification algorithms.</li>
+</ul>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><ol>
+<li>The summary about recent TSC methods, which can be categorized to eight types based on <strong>representation of data</strong>:  </li>
+</ol>
+<ul>
+<li>Distance: classification is based on some time series specific distance<br>measure between series</li>
+<li>Feature: global features are extracted and passed to a standard classifier in a simple pipeline</li>
+<li>Interval: features are derived from selected phase dependent intervals<br>in an ensemble of pipelines, and further output the summary statics.</li>
+<li>Shapelet: phase independent discriminatory subseries form the basis<br>for classification(classify throught the existence of shapelet)</li>
+<li>Dictionary: histograms of counts of repeating patterns are the features for a classifier</li>
+<li>Convolution: convolutions and pooling operations create the feature<br>space for classification</li>
+<li>Deep Learning: neural network</li>
+<li>Hybrid: approaches combine two or more of the above approaches</li>
+</ul>
+<ol>
+<li>The summary about recent TSC methods, which can be categorized to three types based on <strong>design patterns</strong>:  </li>
+</ol>
+<ul>
+<li>single pipeline:transformations+standard ML classifier;</li>
+<li>ensembles of pipelines;</li>
+<li>transformations embedded in classifier structure, such decision tree,where the data is transformed at each node.</li>
+</ul>
+<p><strong>note</strong>: there are generally two kinds of transformations:<br>(1)series-to-vector,such as calculating summary features;<br>(2)series-to-series,such as transforming to the frequency domain of the series;   </p>
+<ol>
+<li>The eight types contain methods:  </li>
+</ol>
+<ul>
+<li>Distance: 1-NN DTW, Elastic Ensemble(EE), Proximityforest(PF), ShapeDTW</li>
+<li>Feature: The canonical time series characteristics(Catch22), Time Series Feature extraction based on Scalable Hypothesis Tests(TSFresh), Generalized signatures, FreshPRINCE</li>
+<li>Interval: Time Series Forest(TSF), Random interval spectral ensemble(RISE), Supervised Time Series Forest(STSF), Random STSF(RSTSF), The Canonical Interval Forest(CIF), The diverse representation canonical interval forest(DrCIF)</li>
+<li>Shapelet: The Shapelet Transform Classifer(STC), The Generalised Random Shapelet Forest(RSF), The Multible representation sequence learner(MrSEQL), MrSQM, Random Dilated shaplet transform(RDST)</li>
+<li>Dictionary: Bag-of-SFA-Symbols(BOSS), Word Extraction for Time Series Classification(WEASEL), WEASEL with dilation(WEASEL-D), Contractble BOSS(cBOSS), Spatial BOSS, The Temporal Dictionary Ensemble(TDE)</li>
+<li>Convolution: ROCKET, MiniRocket, MultiRocket, Hydra;</li>
+<li>Deep learning: InceptionT, Resnet</li>
+<li>Hybrid: HCa, HC1, HC2, TS-CHIEF</li>
+</ul>
+<p>The detailed information can be seen as follow:  </p>
+<p><img src="/post_imgs/20240626-8/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ul>
+<li>30 new univariate datasets introduced:  </li>
+</ul>
+<p><img src="/post_imgs/20240626-8/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>Evaluation on UCR112:  </li>
+</ul>
+<p><img src="/post_imgs/20240626-8/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ul>
+<li>Evaluation on UCR142:  </li>
+</ul>
+<p><img src="/post_imgs/20240626-8/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
 
                 
               </div>
@@ -341,7 +388,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Large-Language-Model/" class="category-chain-item">Large Language Model</a>
+  <a href="/categories/Time-Series-Classification/" class="category-chain-item">Time Series Classification</a>
   
   
 
@@ -356,9 +403,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/RAG/" class="print-no-link">#RAG</a>
-      
         <a href="/tags/survey/" class="print-no-link">#survey</a>
+      
+        <a href="/tags/TSC/" class="print-no-link">#TSC</a>
       
     </div>
   
@@ -370,8 +417,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</div>
-      <div>https://firrice.github.io/2024/06/26/RAG-survey/</div>
+      <div>2023-arxiv Bake off redux-a review and experimental evaluation of recent time series classification algorithms</div>
+      <div>https://firrice.github.io/2024/06/26/8/</div>
     </div>
     <div class="license-meta">
       
@@ -415,9 +462,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/26/1/" title="2017-ICDM Generating synthetic time series to augment sparse datasets">
+                      <a href="/2024/06/26/9/" title="2023-arxiv Enhancing Multivariate Time Series Classifiers through Self-Attention and Relative Positioning Infusion">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2017-ICDM Generating synthetic time series to augment sparse datasets</span>
+                        <span class="hidden-mobile">2023-arxiv Enhancing Multivariate Time Series Classifiers through Self-Attention and Relative Positioning Infusion</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -425,8 +472,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/26/QLoRA/" title="2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs">
-                        <span class="hidden-mobile">2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs</span>
+                      <a href="/2024/06/26/7/" title="2022-ICLR OMNI-SCALE CNNS A SIMPLE AND EFFECTIVE KERNEL SIZE CONFIGURATION FOR TIME SERIES CLASSIFICATION">
+                        <span class="hidden-mobile">2022-ICLR OMNI-SCALE CNNS A SIMPLE AND EFFECTIVE KERNEL SIZE CONFIGURATION FOR TIME SERIES CLASSIFICATION</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -514,12 +561,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -743,49 +784,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
