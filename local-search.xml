@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>The paper mainly introcude the solution for optimizing the RAG system, and the evaluation framework&amp;tools are also included, which can be seen as below:    </p><p><img src="/post_imgs/RAG-survey/1.png" alt=""></p><p>More specifically, three paradigms of RAG are demonstrated as followings:   </p><p><img src="/post_imgs/RAG-survey/2.png" alt=""></p><p><img src="/post_imgs/RAG-survey/3.png" alt=""></p><p>The ecosystem of RAG can be seen in the img below:   </p><p><img src="/post_imgs/RAG-survey/4.png" alt=""></p>]]></content>
     
     
+    <categories>
+      
+      <category>Large Language Model</category>
+      
+    </categories>
+    
     
     <tags>
       
