@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>Survey on clothing image retrieval with cross-domain</title>
+    <link href="/2024/06/30/1/"/>
+    <url>/2024/06/30/1/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>A survey aiming at achieving accurate clothing-retrieval in cross-domain situations.</p><h3 id="Survey-Results"><a href="#Survey-Results" class="headerlink" title="Survey Results"></a>Survey Results</h3><h4 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h4><ul><li><p>clothes are flexible items, and when viewed from different shooting angles or The appearance can be very different when wearing different body<br>types.  </p></li><li><p>(2) The intra-class variance is large and the inter-class variance is<br>small, which is an inherent characteristic of clothing images.</p></li></ul><h4 id="Previous-work"><a href="#Previous-work" class="headerlink" title="Previous work"></a>Previous work</h4><ol><li>critical region recognition</li></ol><ul><li>Bounding box </li><li>Humanbody landmark</li><li>Clothing landmark</li><li>Attention map</li></ul><p><img src="/post_imgs/20240630_1/1.png" alt=""></p><ol><li>Deep metric learning</li></ol><ul><li>Siamese network</li><li>Triplet network and variants</li><li>Ensemble network</li></ul><h4 id="Clothing-databases"><a href="#Clothing-databases" class="headerlink" title="Clothing databases"></a>Clothing databases</h4><ul><li>Street2Shop</li><li>DARN</li><li>DeepFashion v1&amp;v2 (Consumer-shop)</li><li>ModaNet</li></ul><p><img src="/post_imgs/20240630_1/2.png" alt="">  </p><p><img src="/post_imgs/20240630_1/3.png" alt=""></p><h4 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h4><ul><li>clothing landmark recognition and attention map recognition have a higher accuracy in clothing retrieval.   </li><li>deep metric learning is better in the same domain clothing image retrieval than the crossdomain clothing image retrieval.   </li><li>It can be seen that the overall effect of deep metric learning is not as good as clothing critical region recognition of solving cross-domain retrieval problems, indicating that the main problem to be solved in cross-domain clothing<br>retrieval are the recognition of clothing important regions in the image.   </li></ul><p><img src="/post_imgs/20240630_1/4.png" alt=""></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Cross-domain clothing retrieval</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>image retrieval</tag>
+      
+      <tag>cross-domain</tag>
+      
+      <tag>clothing</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification</title>
     <link href="/2024/06/26/10/"/>
     <url>/2024/06/26/10/</url>

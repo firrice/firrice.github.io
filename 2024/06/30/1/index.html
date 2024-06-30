@@ -16,33 +16,29 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MotivationThe detailed study for position encoding within transformer to address MTSC problem is absent. So the paper tends to fill it in terms of Absolute Position Embedding(APE) and Relative Positio">
+    <meta name="description" content="MotivationA survey aiming at achieving accurate clothing-retrieval in cross-domain situations. Survey ResultsChallenges clothes are flexible items, and when viewed from different shooting angles or Th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2023-ECML&#x2F;PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification">
-<meta property="og:url" content="https://firrice.github.io/2024/06/26/10/index.html">
+<meta property="og:title" content="Survey on clothing image retrieval with cross-domain">
+<meta property="og:url" content="https://firrice.github.io/2024/06/30/1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="MotivationThe detailed study for position encoding within transformer to address MTSC problem is absent. So the paper tends to fill it in terms of Absolute Position Embedding(APE) and Relative Positio">
+<meta property="og:description" content="MotivationA survey aiming at achieving accurate clothing-retrieval in cross-domain situations. Survey ResultsChallenges clothes are flexible items, and when viewed from different shooting angles or Th">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/1.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/2.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/3.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/4.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/5.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/6.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/7.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/8.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/20240626-10/9.png">
-<meta property="article:published_time" content="2024-06-26T07:22:36.000Z">
-<meta property="article:modified_time" content="2024-06-26T08:34:11.762Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240630_1/1.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240630_1/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240630_1/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/20240630_1/4.png">
+<meta property="article:published_time" content="2024-06-30T03:25:24.000Z">
+<meta property="article:modified_time" content="2024-06-30T03:27:22.463Z">
 <meta property="article:author" content="firrice">
-<meta property="article:tag" content="MTSC">
-<meta property="article:tag" content="position-info">
+<meta property="article:tag" content="image retrieval">
+<meta property="article:tag" content="cross-domain">
+<meta property="article:tag" content="clothing">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://firrice.github.io/post_imgs/20240626-10/1.png">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/20240630_1/1.png">
   
   
   
-  <title>2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification - Hexo</title>
+  <title>Survey on clothing image retrieval with cross-domain - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -237,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification"></span>
+            <span id="subtitle" data-typed-text="Survey on clothing image retrieval with cross-domain"></span>
           
         </div>
 
@@ -248,8 +244,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-26 15:22" pubdate>
-          June 26, 2024 pm
+        <time datetime="2024-06-30 11:25" pubdate>
+          June 30, 2024 am
         </time>
       </span>
     
@@ -260,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          43 words
+          21 words
         
       </span>
     
@@ -316,50 +312,50 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification</h1>
+            <h1 id="seo-header">Survey on clothing image retrieval with cross-domain</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>The detailed study for position encoding within transformer to address MTSC problem is absent. So the paper tends to fill it in terms of Absolute Position Embedding(APE) and Relative Position Embedding(RPE). Next, authors analyse the shortcomings of them which were summarized as follows:  </p>
-<ol>
-<li><strong>APE</strong></li>
-</ol>
-<ul>
-<li><p><strong>distance awareness property</strong>: It points to that the dot product doesn’t always decrease as the distance between two positions increases, which disappears when lower embedding dimensions, such as 64.</p>
+                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>A survey aiming at achieving accurate clothing-retrieval in cross-domain situations.</p>
+<h3 id="Survey-Results"><a href="#Survey-Results" class="headerlink" title="Survey Results"></a>Survey Results</h3><h4 id="Challenges"><a href="#Challenges" class="headerlink" title="Challenges"></a>Challenges</h4><ul>
+<li><p>clothes are flexible items, and when viewed from different shooting angles or The appearance can be very different when wearing different body<br>types.  </p>
 </li>
-<li><p><strong>anisotropic phenomenon</strong>: a significant part within the embedding vectors are similar between different positions, which will do harm to classification.</p>
+<li><p>(2) The intra-class variance is large and the inter-class variance is<br>small, which is an inherent characteristic of clothing images.</p>
 </li>
 </ul>
-<p><img src="/post_imgs/20240626-10/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><strong>note</strong>: distance awareness property and anisotropic phenomenon can be seen above.  </p>
-<ol>
-<li><strong>RPE</strong></li>
+<h4 id="Previous-work"><a href="#Previous-work" class="headerlink" title="Previous work"></a>Previous work</h4><ol>
+<li>critical region recognition</li>
 </ol>
 <ul>
-<li>lack of memory effiency: it requires $O({L^2}d)$ memory due to the additional relative position embedding.  </li>
+<li>Bounding box </li>
+<li>Humanbody landmark</li>
+<li>Clothing landmark</li>
+<li>Attention map</li>
 </ul>
-<p><img src="/post_imgs/20240626-10/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>The paper mainly tend to solve the problems above, and <strong>tAPE</strong>(Time Absolute Position Embedding) and <strong>eRPE</strong>(Efficient Relative Position Embedding) are proposed.  </p>
+<p><img src="/post_imgs/20240630_1/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol>
+<li>Deep metric learning</li>
+</ol>
 <ul>
-<li>tAPE: It takes into account the input embedding dimension and length as follows:  </li>
+<li>Siamese network</li>
+<li>Triplet network and variants</li>
+<li>Ensemble network</li>
 </ul>
-<p><img src="/post_imgs/20240626-10/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>results:  </p>
-<p><img src="/post_imgs/20240626-10/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>According to the fig(a) above, the distance awareness property has been alleviated, and similarity has decreased in the fig(b) which means the aniostropic problem has been addressed to a certain degree.  </p>
-<ul>
-<li>eRPE</li>
+<h4 id="Clothing-databases"><a href="#Clothing-databases" class="headerlink" title="Clothing databases"></a>Clothing databases</h4><ul>
+<li>Street2Shop</li>
+<li>DARN</li>
+<li>DeepFashion v1&amp;v2 (Consumer-shop)</li>
+<li>ModaNet</li>
 </ul>
-<p><img src="/post_imgs/20240626-10/5.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/20240626-10/6.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>results:  </p>
-<p><img src="/post_imgs/20240626-10/7.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<ul>
-<li>The pipeline of <strong>ConvTran</strong> proposed:  </li>
+<p><img src="/post_imgs/20240630_1/2.png" srcset="/img/loading.gif" lazyload alt="">  </p>
+<p><img src="/post_imgs/20240630_1/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h4><ul>
+<li>clothing landmark recognition and attention map recognition have a higher accuracy in clothing retrieval.   </li>
+<li>deep metric learning is better in the same domain clothing image retrieval than the crossdomain clothing image retrieval.   </li>
+<li>It can be seen that the overall effect of deep metric learning is not as good as clothing critical region recognition of solving cross-domain retrieval problems, indicating that the main problem to be solved in cross-domain clothing<br>retrieval are the recognition of clothing important regions in the image.   </li>
 </ul>
-<p><img src="/post_imgs/20240626-10/8.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p><img src="/post_imgs/20240626-10/9.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p><img src="/post_imgs/20240630_1/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
 
                 
               </div>
@@ -378,7 +374,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Time-Series-Classification/" class="category-chain-item">Time Series Classification</a>
+  <a href="/categories/Cross-domain-clothing-retrieval/" class="category-chain-item">Cross-domain clothing retrieval</a>
   
   
 
@@ -393,9 +389,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/MTSC/" class="print-no-link">#MTSC</a>
+        <a href="/tags/image-retrieval/" class="print-no-link">#image retrieval</a>
       
-        <a href="/tags/position-info/" class="print-no-link">#position-info</a>
+        <a href="/tags/cross-domain/" class="print-no-link">#cross-domain</a>
+      
+        <a href="/tags/clothing/" class="print-no-link">#clothing</a>
       
     </div>
   
@@ -407,8 +405,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification</div>
-      <div>https://firrice.github.io/2024/06/26/10/</div>
+      <div>Survey on clothing image retrieval with cross-domain</div>
+      <div>https://firrice.github.io/2024/06/30/1/</div>
     </div>
     <div class="license-meta">
       
@@ -420,7 +418,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 26, 2024</div>
+          <div>June 30, 2024</div>
         </div>
       
       
@@ -452,18 +450,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/06/30/1/" title="Survey on clothing image retrieval with cross-domain">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Survey on clothing image retrieval with cross-domain</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/06/26/9/" title="2023-arxiv Enhancing Multivariate Time Series Classifiers through Self-Attention and Relative Positioning Infusion">
-                        <span class="hidden-mobile">2023-arxiv Enhancing Multivariate Time Series Classifiers through Self-Attention and Relative Positioning Infusion</span>
+                      <a href="/2024/06/26/10/" title="2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification">
+                        <span class="hidden-mobile">2023-ECML/PKDD Improving Position Encoding of Transformers for Multivariate Time Series Classification</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -551,12 +543,6 @@
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -780,49 +766,6 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
