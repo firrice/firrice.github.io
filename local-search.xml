@@ -356,8 +356,8 @@
   
   <entry>
     <title>2021-ICLR LORA LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</title>
-    <link href="/2024-06-26-LoRA/"/>
-    <url>/2024-06-26-LoRA/</url>
+    <link href="/posts/2024-06-26-LoRA/"/>
+    <url>/posts/2024-06-26-LoRA/</url>
     
     <content type="html"><![CDATA[<h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>Finetuning full-parameter model is expensive.</p><h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>Using the low-rank A&amp;B to represent the finetuned parameters, the detailed pipeline is as follow:  </p><p><img src="/post_imgs/LoRA/1.png" alt=""></p><p><img src="/post_imgs/LoRA/2.png" alt=""></p><h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>There are really abundant experiments for LoRA, and the detail can reference to the original paper.</p>]]></content>
     
