@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://firrice.github.io/posts/hello-world/</loc>
+    
+    <lastmod>2024-07-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://firrice.github.io/posts/2024-06-25-Blogs/</loc>
     
     <lastmod>2024-07-15</lastmod>
@@ -158,15 +167,6 @@
     <loc>https://firrice.github.io/posts/2024-06-26-LoRA/</loc>
     
     <lastmod>2024-07-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://firrice.github.io/2024-06-23-hello-world/</loc>
-    
-    <lastmod>2024-06-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
