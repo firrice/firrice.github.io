@@ -16,21 +16,27 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="MotivationA new efficient finetuning method based on quantile quantization was proposed, which realized the goal finetuning a 65B model on a single 48GB GPU, preserving full 16-bit task performance at">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://firrice.github.io/2024-06-23-hello-world/index.html">
+<meta property="og:title" content="2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs">
+<meta property="og:url" content="https://firrice.github.io/posts/2024-06-26-QLoRA/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="MotivationA new efficient finetuning method based on quantile quantization was proposed, which realized the goal finetuning a 65B model on a single 48GB GPU, preserving full 16-bit task performance at">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-06-23T02:22:30.207Z">
-<meta property="article:modified_time" content="2024-06-23T02:22:30.207Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/QLoRA/1.jpg">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/QLoRA/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/QLoRA/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/QLoRA/4.jpg">
+<meta property="article:published_time" content="2024-06-26T01:46:07.000Z">
+<meta property="article:modified_time" content="2024-07-15T02:24:14.996Z">
 <meta property="article:author" content="firrice">
+<meta property="article:tag" content="LLM-finetune">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/QLoRA/1.jpg">
   
   
   
-  <title>Hello World - Hexo</title>
+  <title>2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,7 +231,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hello World"></span>
+            <span id="subtitle" data-typed-text="2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs"></span>
           
         </div>
 
@@ -236,8 +242,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-06-23 10:22" pubdate>
-          June 23, 2024 am
+        <time datetime="2024-06-26 09:46" pubdate>
+          June 26, 2024 am
         </time>
       </span>
     
@@ -248,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          18 words
+          69 words
         
       </span>
     
@@ -304,20 +310,35 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hello World</h1>
+            <h1 id="seo-header">2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <h3 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h3><p>A new efficient finetuning method based on quantile quantization was proposed, which realized the goal finetuning a 65B model on a single 48GB GPU, preserving full 16-bit task performance at the same time.</p>
+<h3 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h3><p>Core concepts:   </p>
+<ul>
+<li>4-bit NormalFloat Quantization(NF4)   </li>
+<li>Double Quantization   </li>
+<li>Paged optimizer   </li>
+</ul>
+<h4 id="4-bit-NormalFloat-Quantization-NF4"><a href="#4-bit-NormalFloat-Quantization-NF4" class="headerlink" title="4-bit NormalFloat Quantization(NF4)"></a><strong>4-bit NormalFloat Quantization(NF4)</strong></h4><p><strong>The final goal</strong>   </p>
+<p>FP32 -&gt; INT4, which the latter has a range of &#91;-8, 7&#93;(the first bit is sign bit, and “1000” &amp; “0000” represent the value of zero, it was agreed that “1000” points to “-8”, and “0000” points to “0”)  </p>
+<p><strong>The overrall pipeline</strong></p>
+<p>(1) estimate the ${2^{\rm{k}}} + 1$ quantiles of a theoretical N(0, 1) distribution to obtain a k-bit quantile quantization data type for normal distributions;   </p>
+<p>(2) take this data type and normalize its values into the [−1, 1] range;   </p>
+<p>(3) quantize an input weight tensor by normalizing it into the [−1, 1] range through absolute maximum rescaling.<br>(4) quantization inference.   </p>
+<p>The detailed explaination can refer to: <a target="_blank" rel="noopener" href="https://readpaper.feishu.cn/docx/CrMGdSVPKow5d1x1XQMcJioRnQe">link1</a>,<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/638927564">link2</a>   </p>
+<p>Here, we have:   </p>
+<p><img src="/post_imgs/QLoRA/1.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>The process of getting 16 quantiles can refer to the code below:   </p>
+<p><img src="/post_imgs/QLoRA/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>The process of quantization inference:   </p>
+<p><img src="/post_imgs/QLoRA/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="Double-Quantization"><a href="#Double-Quantization" class="headerlink" title="Double Quantization"></a><strong>Double Quantization</strong></h4><p>The core of it is to quantize the <strong>constant</strong>!   </p>
+<p><img src="/post_imgs/QLoRA/4.jpg" srcset="/img/loading.gif" lazyload alt=""></p>
+<h4 id="Paged-optimizer"><a href="#Paged-optimizer" class="headerlink" title="Paged optimizer"></a><strong>Paged optimizer</strong></h4><p>Excerpted from the raw article: “We use this feature to allocate paged memory for the optimizer states which are then <strong>automatically evicted to CPU RAM</strong> when the GPU runs out-of-memory and paged back into GPU memory when the memory is needed in the optimizer update step.”   </p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>Which can refer to the raw paper.</p>
 
                 
               </div>
@@ -326,6 +347,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Large-Language-Model/" class="category-chain-item">Large Language Model</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/LLM-finetune/" class="print-no-link">#LLM-finetune</a>
+      
+    </div>
   
 </div>
 
@@ -335,8 +384,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hello World</div>
-      <div>https://firrice.github.io/2024-06-23-hello-world/</div>
+      <div>2024-NIPS QLoRA-Efficient Finetuning of Quantized LLMs</div>
+      <div>https://firrice.github.io/posts/2024-06-26-QLoRA/</div>
     </div>
     <div class="license-meta">
       
@@ -348,7 +397,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>June 23, 2024</div>
+          <div>June 26, 2024</div>
         </div>
       
       
@@ -380,15 +429,21 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/2024-06-24-Prefix-Tuning/" title="2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation">
+                      <a href="/posts/2024-06-26-RAG-survey/" title="2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation</span>
+                        <span class="hidden-mobile">2023-arxiv Retrieval-Augmented Generation for Large Language Models-A Survey</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/posts/2024-06-26-LoRA/" title="2021-ICLR LORA LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS">
+                        <span class="hidden-mobile">2021-ICLR LORA LOW-RANK ADAPTATION OF LARGE LANGUAGE MODELS</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -473,6 +528,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -696,6 +757,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
