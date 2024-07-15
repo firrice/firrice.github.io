@@ -430,6 +430,31 @@
   
   
   <entry>
+    <title>Blogs in AI domain</title>
+    <link href="/posts/2024-06-25-Blogs/"/>
+    <url>/posts/2024-06-25-Blogs/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Large-Language-Model"><a href="#Large-Language-Model" class="headerlink" title="Large Language Model"></a>Large Language Model</h3><ul><li><a href="https://lilianweng.github.io/posts/">Lilian Weng</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Blog links</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Blog links</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2021-ACL/IJCNLP Prefix-Tuning Optimizing Continuous Prompts for Generation</title>
     <link href="/posts/2024-06-24-Prefix-Tuning/"/>
     <url>/posts/2024-06-24-Prefix-Tuning/</url>
