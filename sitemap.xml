@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://firrice.github.io/googleeff1ce48b14faeb9.html</loc>
+    
+    <lastmod>2024-07-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://firrice.github.io/posts/2024-07-12-1/</loc>
     
     <lastmod>2024-07-17</lastmod>
@@ -296,14 +305,14 @@
   </url>
   
   <url>
-    <loc>https://firrice.github.io/tags/Blog-links/</loc>
+    <loc>https://firrice.github.io/tags/video-segmentation/</loc>
     <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://firrice.github.io/tags/video-segmentation/</loc>
+    <loc>https://firrice.github.io/tags/Blog-links/</loc>
     <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -333,14 +342,14 @@
   </url>
   
   <url>
-    <loc>https://firrice.github.io/categories/Blog-links/</loc>
+    <loc>https://firrice.github.io/categories/Video-Segmentation/</loc>
     <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://firrice.github.io/categories/Video-Segmentation/</loc>
+    <loc>https://firrice.github.io/categories/Blog-links/</loc>
     <lastmod>2024-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
