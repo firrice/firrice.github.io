@@ -25,12 +25,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/1.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/7.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/8.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/3.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/4.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/5.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/5.pn">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/6.png">
 <meta property="article:published_time" content="2024-08-30T03:25:24.000Z">
-<meta property="article:modified_time" content="2024-08-30T02:49:36.000Z">
+<meta property="article:modified_time" content="2024-08-30T03:18:38.966Z">
 <meta property="article:author" content="firrice">
 <meta property="article:tag" content="video Object segmentation">
 <meta name="twitter:card" content="summary_large_image">
@@ -256,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          101 words
+          80 words
         
       </span>
     
@@ -323,29 +325,20 @@
 <p><img src="/post_imgs/2024-08-30-1/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>The overview of Cutie was provided below:</p>
 <p><img src="/post_imgs/2024-08-30-1/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<ol>
-<li>Pipeline:  </li>
-</ol>
-<ul>
+<h4 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline:"></a>Pipeline:</h4><ul>
 <li>Cutie encodes segmented frames (given as input or segmented by the model) into a high-resolution <strong>pixel memory F</strong> and a high-level <strong>object memory S</strong> and stores them for segmenting future frames. </li>
 <li>To segment a new query frame, Cutie retrieves an initial pixel readout R0 from the pixel memory using encoded query features. This initial readout R0 is computed via low-level pixel matching and is therefore often noisy. </li>
 <li>We enrich it with object-level semantics by augmenting R0 with information from the object memory S and a set of object queries X through an object transformer with L transformer blocks. </li>
 <li>The enriched output of the object transformer, RL, or the object readout, is passed to the decoder for generating the final output mask.  </li>
 </ul>
-<ol>
-<li>The detailed sub-modules:  </li>
-</ol>
-<p>Within each block, we first compute masked crossattention, letting the object queries Xl−1 read from the<br>pixel features Rl−1. The masked attention focuses half of the object queries on the foreground region while the<br>other half is targeted towards the background. Then, we pass the object queries into standard self-attention and feed-forward layers for object-level<br>reasoning. Next, we update the pixel features with a reversed cross-attention layer, putting the object semantics from object queries Xl back into pixel features Rl−1. We then pass<br>the pixel features into a feed-forward network while skipping the computationally expensive self-attention in a standard transformer.   </p>
+<h4 id="The-detailed-sub-modules"><a href="#The-detailed-sub-modules" class="headerlink" title="The detailed sub-modules:"></a>The detailed sub-modules:</h4><p>Within each block, we first compute masked crossattention, letting the object queries ${X_{l - 1}}$  read from the<br>pixel features Rl−1. The masked attention focuses half of the object queries on the foreground region while the<br>other half is targeted towards the background. Then, we pass the object queries into standard self-attention and feed-forward layers for object-level<br>reasoning. Next, we update the pixel features with a reversed cross-attention layer, putting the object semantics from object queries Xl back into pixel features Rl−1. We then pass<br>the pixel features into a feed-forward network while skipping the computationally expensive self-attention in a standard transformer.   </p>
 <ul>
-<li>2.1 Foreground-Background Masked Attention<br>  Standard cross-attention with the residual path finds:<br>  ${\rm{X}}_l^’ = {A_l}{V_l} + {X_l} = soft\max ({Q_l}K_l^T){V_l} + {X_l}$<br>  And researchers note that there are distinctly different attention patterns for different object queries – some focus on different foreground parts, some<br>  on the background, and some on distractors. So the attention masking strategy was hand-crafted as below:<br>  ${\rm{X}}_l^’ = soft\max ({M_l} + {Q_l}K_l^T){V_l} + {X_l}$<br>  <img src="/post_imgs/2024-08-30-1/3.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>2.1 Foreground-Background Masked Attention<br>  Standard cross-attention with the residual path finds:<br>  <img src="/post_imgs/2024-08-30-1/7.png" srcset="/img/loading.gif" lazyload alt=""><br>  And researchers note that there are distinctly different attention patterns for different object queries – some focus on different foreground parts, some on the background, and some on distractors. So the attention masking strategy was hand-crafted as below:<br>  <img src="/post_imgs/2024-08-30-1/8.png" srcset="/img/loading.gif" lazyload alt=""><br>  <img src="/post_imgs/2024-08-30-1/3.png" srcset="/img/loading.gif" lazyload alt=""></li>
 <li>2.2 Positional Embedding</li>
 <li>2.3 Object memory<br>  <img src="/post_imgs/2024-08-30-1/4.png" srcset="/img/loading.gif" lazyload alt=""></li>
-<li>2.4 Pixel Memory &amp; Pixel reading<br>  <img src="/post_imgs/2024-08-30-1/5.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>2.4 Pixel Memory &amp; Pixel reading<br>  <img src="/post_imgs/2024-08-30-1/5.pn" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
-<ol>
-<li>Training &amp; Inference</li>
-</ol>
-<ul>
+<h4 id="Training-amp-Inference"><a href="#Training-amp-Inference" class="headerlink" title="Training &amp; Inference"></a>Training &amp; Inference</h4><ul>
 <li>First, pretraining on static images, and finetune on video datasets. </li>
 <li>Resize the inputs such that the shorter edge has no more than 480 pixels and rescale the model’s prediction back to the original resolution. </li>
 </ul>
