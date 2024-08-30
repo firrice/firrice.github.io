@@ -16,29 +16,29 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="motivationAvailable cues like the intermediate predictions of video frames become richer, while existing works can not utilize them effectively.The paper resolves the issue by leveraging memory networ">
+    <meta name="description" content="motivationRecent works on VOS employ bottom-up pixel-level memory reading which struggles due to matching noise, especially in the presence of distractors, resultingin lower performance in more challe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2019-ICCV Video Object Segmentation using Space-Time Memory Networks">
-<meta property="og:url" content="https://firrice.github.io/posts/2024-08-09-1/index.html">
+<meta property="og:title" content="2024-CVPR Putting the Object Back into Video Object Segmentation">
+<meta property="og:url" content="https://firrice.github.io/posts/2024-08-30-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="motivationAvailable cues like the intermediate predictions of video frames become richer, while existing works can not utilize them effectively.The paper resolves the issue by leveraging memory networ">
+<meta property="og:description" content="motivationRecent works on VOS employ bottom-up pixel-level memory reading which struggles due to matching noise, especially in the presence of distractors, resultingin lower performance in more challe">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/1.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/2.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/3.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/4.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/5.png">
-<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/6.png">
-<meta property="article:published_time" content="2024-08-09T07:25:24.000Z">
-<meta property="article:modified_time" content="2024-08-09T07:05:33.920Z">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/1.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/2.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/4.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/5.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/6.png">
+<meta property="article:published_time" content="2024-08-30T03:25:24.000Z">
+<meta property="article:modified_time" content="2024-08-30T02:49:36.000Z">
 <meta property="article:author" content="firrice">
-<meta property="article:tag" content="video Obejct segmentation">
+<meta property="article:tag" content="video Object segmentation">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://firrice.github.io/post_imgs/2024-08-09-1/1.png">
+<meta name="twitter:image" content="https://firrice.github.io/post_imgs/2024-08-30-1/1.png">
   
   
   
-  <title>2019-ICCV Video Object Segmentation using Space-Time Memory Networks - Hexo</title>
+  <title>2024-CVPR Putting the Object Back into Video Object Segmentation - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -233,7 +233,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2019-ICCV Video Object Segmentation using Space-Time Memory Networks"></span>
+            <span id="subtitle" data-typed-text="2024-CVPR Putting the Object Back into Video Object Segmentation"></span>
           
         </div>
 
@@ -244,8 +244,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-08-09 15:25" pubdate>
-          August 9, 2024 pm
+        <time datetime="2024-08-30 11:25" pubdate>
+          August 30, 2024 am
         </time>
       </span>
     
@@ -256,7 +256,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          45 words
+          101 words
         
       </span>
     
@@ -312,31 +312,44 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2019-ICCV Video Object Segmentation using Space-Time Memory Networks</h1>
+            <h1 id="seo-header">2024-CVPR Putting the Object Back into Video Object Segmentation</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="motivation"><a href="#motivation" class="headerlink" title="motivation"></a>motivation</h3><p>Available cues like the intermediate predictions of video frames become richer, while existing works can not utilize them effectively.<br>The paper resolves the issue by leveraging memory networks and learn to read relevant information from<br>all available sources.</p>
-<h3 id="method"><a href="#method" class="headerlink" title="method"></a>method</h3><p>In our framework, the past frames with object masks form an external memory, and the current frame as the query is segmented using the mask information in the memory.<br>The overall pipeline of “memory” was pictured below:<br><img src="/post_imgs/2024-08-09-1/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/2024-08-09-1/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>The memory nerwotk was proposed initially to address the Q&amp;A problem in NLP, authors have make several efforts to make it suitable for the<br>pixel-wise labeling task, which contains:  </p>
+                <h3 id="motivation"><a href="#motivation" class="headerlink" title="motivation"></a>motivation</h3><p>Recent works on VOS employ <strong>bottom-up pixel-level memory reading</strong> which struggles due to matching <strong>noise</strong>, especially in the presence of distractors, resulting<br>in lower performance in more challenging data.</p>
+<h3 id="method"><a href="#method" class="headerlink" title="method"></a>method</h3><p>Cutie method proposed in the paper performs <strong>top-down object-level memory reading</strong> by adapting a small set of object queries.  </p>
+<p>note: Pixel-level matching means mapping every query pixel independently to a linear combination of memory pixels (e.g., with an attention layer), and the comparison with object-level reading was depicted below:  </p>
+<p><img src="/post_imgs/2024-08-30-1/1.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<p>The overview of Cutie was provided below:</p>
+<p><img src="/post_imgs/2024-08-30-1/2.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol>
+<li>Pipeline:  </li>
+</ol>
 <ul>
-<li>extend the memory dimension to the 3D spatio-temporal space.  </li>
-<li>the space-time memory read operation was proposed to read localized information in space and time from the 3D memory.</li>
+<li>Cutie encodes segmented frames (given as input or segmented by the model) into a high-resolution <strong>pixel memory F</strong> and a high-level <strong>object memory S</strong> and stores them for segmenting future frames. </li>
+<li>To segment a new query frame, Cutie retrieves an initial pixel readout R0 from the pixel memory using encoded query features. This initial readout R0 is computed via low-level pixel matching and is therefore often noisy. </li>
+<li>We enrich it with object-level semantics by augmenting R0 with information from the object memory S and a set of object queries X through an object transformer with L transformer blocks. </li>
+<li>The enriched output of the object transformer, RL, or the object readout, is passed to the decoder for generating the final output mask.  </li>
 </ul>
-<p>The detailed implementation of the space-time memory read operation:<br><img src="/post_imgs/2024-08-09-1/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p>The training detailes(consists of two phases) and inference detailes:  </p>
+<ol>
+<li>The detailed sub-modules:  </li>
+</ol>
+<p>Within each block, we first compute masked crossattention, letting the object queries Xl−1 read from the<br>pixel features Rl−1. The masked attention focuses half of the object queries on the foreground region while the<br>other half is targeted towards the background. Then, we pass the object queries into standard self-attention and feed-forward layers for object-level<br>reasoning. Next, we update the pixel features with a reversed cross-attention layer, putting the object semantics from object queries Xl back into pixel features Rl−1. We then pass<br>the pixel features into a feed-forward network while skipping the computationally expensive self-attention in a standard transformer.   </p>
 <ul>
-<li><strong>Pre-training</strong> on images generated by applying random affine transforms to a static image, outputing the synthetic video clip that consists of three frames;</li>
-<li><strong>Main-training</strong> on video, Youtube-VOS or DAVIS-2017</li>
-<li><strong>Inference</strong> memory consists of the first, the latest frame and intermediate frames with every N frames;</li>
+<li>2.1 Foreground-Background Masked Attention<br>  Standard cross-attention with the residual path finds:<br>  ${\rm{X}}_l^’ = {A_l}{V_l} + {X_l} = soft\max ({Q_l}K_l^T){V_l} + {X_l}$<br>  And researchers note that there are distinctly different attention patterns for different object queries – some focus on different foreground parts, some<br>  on the background, and some on distractors. So the attention masking strategy was hand-crafted as below:<br>  ${\rm{X}}_l^’ = soft\max ({M_l} + {Q_l}K_l^T){V_l} + {X_l}$<br>  <img src="/post_imgs/2024-08-30-1/3.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>2.2 Positional Embedding</li>
+<li>2.3 Object memory<br>  <img src="/post_imgs/2024-08-30-1/4.png" srcset="/img/loading.gif" lazyload alt=""></li>
+<li>2.4 Pixel Memory &amp; Pixel reading<br>  <img src="/post_imgs/2024-08-30-1/5.png" srcset="/img/loading.gif" lazyload alt=""></li>
 </ul>
-<p>note: STM is a offline method rather than online learning method, which updates the model during inferecing.  </p>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>The results consist of pre-training only, main-training only, full training, cross-validation, single object, multi object.</p>
-<p><img src="/post_imgs/2024-08-09-1/4.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/2024-08-09-1/5.png" srcset="/img/loading.gif" lazyload alt=""></p>
-<p><img src="/post_imgs/2024-08-09-1/6.png" srcset="/img/loading.gif" lazyload alt=""></p>
+<ol>
+<li>Training &amp; Inference</li>
+</ol>
+<ul>
+<li>First, pretraining on static images, and finetune on video datasets. </li>
+<li>Resize the inputs such that the shorter edge has no more than 480 pixels and rescale the model’s prediction back to the original resolution. </li>
+</ul>
+<h3 id="Resulots"><a href="#Resulots" class="headerlink" title="Resulots"></a>Resulots</h3><p><img src="/post_imgs/2024-08-30-1/6.png" srcset="/img/loading.gif" lazyload alt=""></p>
 
                 
               </div>
@@ -370,7 +383,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/video-Obejct-segmentation/" class="print-no-link">#video Obejct segmentation</a>
+        <a href="/tags/video-Object-segmentation/" class="print-no-link">#video Object segmentation</a>
       
     </div>
   
@@ -382,8 +395,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2019-ICCV Video Object Segmentation using Space-Time Memory Networks</div>
-      <div>https://firrice.github.io/posts/2024-08-09-1/</div>
+      <div>2024-CVPR Putting the Object Back into Video Object Segmentation</div>
+      <div>https://firrice.github.io/posts/2024-08-30-1/</div>
     </div>
     <div class="license-meta">
       
@@ -395,7 +408,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 9, 2024</div>
+          <div>August 30, 2024</div>
         </div>
       
       
@@ -427,18 +440,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/2024-08-30-1/" title="2024-CVPR Putting the Object Back into Video Object Segmentation">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2024-CVPR Putting the Object Back into Video Object Segmentation</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/posts/2024-08-09-1/" title="2019-ICCV Video Object Segmentation using Space-Time Memory Networks">
+                        <span class="hidden-mobile">2019-ICCV Video Object Segmentation using Space-Time Memory Networks</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -526,6 +533,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -749,6 +762,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
