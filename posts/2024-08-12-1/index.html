@@ -16,21 +16,24 @@
   <meta name="author" content="firrice">
   <meta name="keywords" content="">
   
-    <meta name="description" content="motivationThe researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparisonresults were depicted below:And researchers think the undesirable connecti">
+    <meta name="description" content="motivationThe researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparison results were depicted below:And researchers think the undesirable connect">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2022-ECCV XMem Long-Term Video Object Segmentation with an Atkinson-Shiffrin Memory Model">
 <meta property="og:url" content="https://firrice.github.io/posts/2024-08-12-1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="motivationThe researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparisonresults were depicted below:And researchers think the undesirable connecti">
+<meta property="og:description" content="motivationThe researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparison results were depicted below:And researchers think the undesirable connect">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/1.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/2.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/3.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/4.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/6.png">
+<meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/5.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/9.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/7.png">
 <meta property="og:image" content="https://firrice.github.io/post_imgs/2024-08-12-1/8.png">
 <meta property="article:published_time" content="2024-08-12T08:25:24.000Z">
-<meta property="article:modified_time" content="2024-09-02T07:06:46.000Z">
+<meta property="article:modified_time" content="2024-09-02T07:30:14.638Z">
 <meta property="article:author" content="firrice">
 <meta property="article:tag" content="video object segmentation">
 <meta name="twitter:card" content="summary_large_image">
@@ -256,7 +259,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          144 words
+          114 words
         
       </span>
     
@@ -267,7 +270,7 @@
         
         
         
-          2 mins
+          1 mins
         
       </span>
     
@@ -317,7 +320,7 @@
             
               <div class="markdown-body">
                 
-                <h3 id="motivation"><a href="#motivation" class="headerlink" title="motivation"></a>motivation</h3><p>The researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparison<br>results were depicted below:<br><img src="/post_imgs/2024-08-12-1/1.png" srcset="/img/loading.gif" lazyload alt=""><br>And researchers think the undesirable connection of performance and GPU memory consumption is a direct consequence<br>of using a <strong>single feature memory type</strong>(but why?).</p>
+                <h3 id="motivation"><a href="#motivation" class="headerlink" title="motivation"></a>motivation</h3><p>The researchers explored the problem(“Do state-of-the-art VOS algorithm scale well?”), and the respective comparison results were depicted below:<br><img src="/post_imgs/2024-08-12-1/1.png" srcset="/img/loading.gif" lazyload alt=""><br>And researchers think the undesirable connection of performance and GPU memory consumption is a direct consequence of using a <strong>single feature memory type</strong>(but why?).</p>
 <h3 id="method"><a href="#method" class="headerlink" title="method"></a>method</h3><p><strong>Background Knowledge</strong>: GRU, STCN, Rethink-STCN</p>
 <p>To address the limitation above, multi-type memory mechanism inspired by the Atkinson{Shiffrin memory model was proposed,<br>dubbed XMem, which consists of three types of memory, sensory memory, working memory(short-term) and long-term momory.  </p>
 <p>The key feature of them was listed as below:</p>
@@ -332,24 +335,13 @@
 <p><img src="/post_imgs/2024-08-12-1/3.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p>XMem consists of three end-to-end trainable convolutional networks as shown in Figure above: a query encoder that extracts query-specific image features, a decoder<br>that takes the output of the memory reading step to generate an object mask, and a value encoder that combines the image with the object mask to extract new<br>memory features.  </p>
 <ol>
-<li>The detailed introduction of modules(<strong>memory update + memory reading</strong>):<br> 2.1 sensory Memory <strong>update</strong><pre><code class="hljs"> Sensory memory is updated every frame using multi-scale features of the decoder. At every r-th frame, whenever a new working memory frame is generated,
- we perform a deep update. Features from the value encoder are used to refresh the sensory memory with another GRU. 
- ![](/post_imgs/2024-08-12-1/4.png)  
-</code></pre> 2.2 working Memory <strong>update</strong>  <pre><code class="hljs"> At every r-th frame, we 1) copy the query as a new key; and 2) generate a new value by feeding the image and the predicted
- mask into the value encoder. The new key and value are appended to the working memory and are later used in memory reading for subsequent frames.    
-</code></pre> 2.3 long-term memory <strong>update</strong><pre><code class="hljs"> **protype selection**: Concretely, we pick the top-P frequently used candidates as prototypes. &quot;Usage&quot; of a memory element is defined by its cumulative total affinity (probability mass) in the affinity matrix $W$, and normalized by the duration
- that each candidate is in the working memory.  
- **memory potentiation**: anti-aliasing filter with constructing the neighbourhood for the filtering in the high dimensional key space to alleviate the &quot;aliasing&quot; problem in sampling
- $v$ value. Concretely, for each prototype, we aggregate values from all the value candidates $&#123;v^c&#125;$ via a weighted average like the similar formula above:  
- ![](/post_imgs/2024-08-12-1/6.png)  
- **Removing Obsolete Features**  
-</code></pre> 2.4 <strong>Memory Reading</strong>   <pre><code class="hljs"> $F = vW(k,q)$  
- $W(k,q) = softmax(S(k,q))$  
- ![](/post_imgs/2024-08-12-1/5.png)
- In the formula above, $s$ is shrinkage term, and $e$ is selection term. A high shrinkage represents low confidence and leads to a more
- local influence. Note that even low-confidence keys can have a high contribution if the query happens to coincide with it &#123; thus avoiding the memory domination
- problem of the dot product. 
-</code></pre></li>
+<li>The detailed introduction of modules(<strong>memory update + memory reading</strong>):  <ul>
+<li>2.1 sensory Memory <strong>update</strong><br>Sensory memory is updated every frame using multi-scale features of the decoder. At every r-th frame, whenever a new working memory frame is generated, we perform a deep update. Features from the value encoder are used to refresh the sensory memory with another GRU.<br><img src="/post_imgs/2024-08-12-1/4.png" srcset="/img/loading.gif" lazyload alt="">      </li>
+<li>2.2 working Memory <strong>update</strong><br>At every r-th frame, we 1) copy the query as a new key; and 2) generate a new value by feeding the image and the predicted mask into the value encoder. The new key and value are appended to the working memory and are later used in memory reading for subsequent frames.    </li>
+<li>2.3 long-term memory <strong>update</strong><br><strong>protype selection</strong>: Concretely, we pick the top-P frequently used candidates as prototypes. “Usage” of a memory element is defined by its cumulative total affinity (probability mass) in the affinity matrix $W$, and normalized by the duration that each candidate is in the working memory.<br><strong>memory potentiation</strong>: anti-aliasing filter with constructing the neighbourhood for the filtering in the high dimensional key space to alleviate the “aliasing” problem in sampling $v$ value. Concretely, for each prototype, we aggregate values from all the value candidates ${v^c}$ via a weighted average like the similar formula above:<br><img src="/post_imgs/2024-08-12-1/6.png" srcset="/img/loading.gif" lazyload alt=""><br><strong>Removing Obsolete Features</strong>  </li>
+<li>2.4 <strong>Memory Reading</strong><br>$F = vW(k,q)$<br>$W(k,q) = softmax(S(k,q))$<br><img src="/post_imgs/2024-08-12-1/5.png" srcset="/img/loading.gif" lazyload alt=""><br>In the formula above, $s$ is shrinkage term, and $e$ is selection term. A high shrinkage represents low confidence and leads to a more local influence. Note that even low-confidence keys can have a high contribution if the query happens to coincide with it { thus avoiding the memory domination problem of the dot product. </li>
+</ul>
+</li>
 </ol>
 <h3 id="results"><a href="#results" class="headerlink" title="results"></a>results</h3><p><img src="/post_imgs/2024-08-12-1/9.png" srcset="/img/loading.gif" lazyload alt=""></p>
 <p><img src="/post_imgs/2024-08-12-1/7.png" srcset="/img/loading.gif" lazyload alt=""> <img src="/post_imgs/2024-08-12-1/8.png" srcset="/img/loading.gif" lazyload alt="">  </p>
@@ -543,6 +535,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -766,6 +764,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script defer src="/js/leancloud.js" ></script>
 
